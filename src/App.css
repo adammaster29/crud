@@ -1,0 +1,32 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.form--container{
+  /* box-shadow: 2px 2px 2px 2px gray; */
+display: flex;
+flex-direction: column;
+justify-content: center;
+justify-items: center;
+margin-left: auto;
+margin-right: auto;
+width: 350px;
+}
+
+.input--campo{
+margin-left: 1%;
+width: 340px;
+text-align: center;
+height: 40px;
+
+
+}
+
+.label--name{
+display: flex;
+justify-content: center;
+
+}
