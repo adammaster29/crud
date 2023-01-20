@@ -1,20 +1,20 @@
 import React from 'react';
 
-const Userlist = ({UserList}) => {
+const Userlist = ({userslistnew}) => {
 
 
 
     return (
         <ul>
             {
-                UserList.map(users=>(
-                <li key={users.Id}> 
-                    <p>{users.Id}</p>
-                    <p>{users.Email}</p>
-                    <p>{users.Password}</p>
-                    <p>{users.Firstname}</p>
-                    <p>{users.Lastname}</p>
-                    <p>{users.Birthday}</p>
+                userslistnew.map(users=>(
+                <li key={users.id}> 
+                    <p>id:{users.id}</p>
+                    <p>correo: {users.email}</p>
+                    {/* <p>{users.password}</p> */}
+                    <p>nombres: {users.firstname}</p>
+                    <p>apellidos: {users.lastname}</p>
+                    <p>cumpleaños: {users.birthday}</p>
                 </li>
                 ))
             }
