@@ -5,7 +5,7 @@
 }
 
 body{
-background-image: url(img/fondo\ crud.jpg);
+background-image: url("/img/fondo\ crud.jpg");
 background-repeat: no-repeat;
 background-size: cover;
 
@@ -47,7 +47,7 @@ justify-content: center;
 /*user*/
 
 .container-user{
-border: 1px solid rgb(196, 188, 188);
+
 background: linear-gradient(rgba(123, 123, 161, 0.318),rgba(175, 165, 25, 0.194),rgba(233, 115, 6, 0.293));
 width: 250px;
 height: 300px;
