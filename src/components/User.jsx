@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-const User = ({addusers}) => {
+const User = ({addusers,editusers}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -12,6 +12,15 @@ const[password,setPassword] = useState("");
 const[firstname,setFirstname] = useState("");
 const[lastname,setLastname] = useState("");
 const[birthday,setBirthday] = useState("");
+
+useEffect(()=>{
+  setEmail(editusers?.email)
+  setPassword(editusers?.password)
+  setFirstname(editusers?.firstname)
+  setLastname(editusers?.lastname)
+  setBirthday(editusers?.birthday)
+
+},[editusers])
 
 const submit = (e) => {
 e.preventDefault(); 
@@ -25,9 +34,11 @@ e.preventDefault();
         birthday:birthday,
     };
 
-    addusers(UserNew);
+addusers(UserNew);
 console.log(UserNew);
+
 };
+
 
 
   return (
@@ -71,7 +82,7 @@ console.log(UserNew);
                 <label className="label--name" htmlFor="Birthday">Birthday</label>
                 <input value={birthday} onChange={ e => setBirthday(e.target.value)} className="input--campo" type="date" placeholder="fecha de cumpleaños " />
             </div> <br />
-            <Button type="submit">Agregar Usuarioss</Button>
+            <Button onClick={handleClose}  type="submit">Agregar Usuarioss</Button>
           </form><br />
         </Modal>
       </>

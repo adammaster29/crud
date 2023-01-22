@@ -6,6 +6,7 @@ import Userlist from './components/Userlist'
 
 function App() {
 
+
   const UserList=[{
     id: 15421542,
     email:"ing@gmail.com",
@@ -24,17 +25,42 @@ birthday:"17/11/1993",
 }
 ];
 
-const[userslistnew,setUserslistnew] = useState(UserList);
 
+
+
+
+const[userslistnew,setUserslistnew] = useState(UserList);
+const [editusers,setEditusers] = useState(null)
 const addusers = (UserNew)=>{
  setUserslistnew([...userslistnew,UserNew]);
-alert("usuario creado")
+
 }
+
+const deleteusers = (id)=>{
+const filterusers = userslistnew.filter(
+
+  users =>users.id !== id
+);
+setUserslistnew(filterusers)
+}
+
+const edit = (users)=>{
+  setEditusers(users)
+}
+console.log(editusers)
 
   return (
     <div className="App">
-     <User addusers={addusers}/>
-     <Userlist userslistnew={userslistnew}/>
+     <User  
+     addusers={addusers}
+     editusers={editusers} 
+     />
+
+     <Userlist
+      userslistnew={userslistnew}
+      deleteusers={deleteusers}
+      edit={edit}
+      />
     </div>
   )
 }
